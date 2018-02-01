@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="menu">
+    <text>正在热映</text>
+    <text>即将上映</text>
+    <text>Top250</text>
+  </view>
+  <view class="loading" wx:if="{{isLoading}}">
+    <image style="width: 100px; height: 100px; " src="../../static/images/loading.gif"></image>
+  </view>
+  <scroll-view scroll-y='true' class='movieList' wx:else class='list' bindscrolltolower="getMoreData">
+    <navigator url="movieDetail/moviedetail?id={{item.id}}" hover-class="navigator-hover" wx:for="{{movieList}}" wx:key="{{item.id}}" class='item'>
+      <!-- 图片显示  -->
+      <view class='left'>
+        <image src="{{item.images.small}}"></image>
+      </view>
+      <!-- 基本信息  -->
+      <view class='right'>
+        <text class='title'>{{item.title}}</text>
+        <text class='year'>上映时间：{{item.year}}</text>
+        <text class='rating'>观众评分 <text>{{item.rating.average}} </text></text>
+        <view class='casts'>主演：
+          <text wx:for="{{item.casts}}" wx:for-item="trade" wx:key="{{item.id}}">{{trade.name}}，</text>
+        </view>
+        <text class='directiors'>导演 {{item.directors[0].name}}</text>
+      </view>
+
+      
+
+    </navigator>
+    <view class="loading2" wx:if="{{isLoading2}}">
+        <image style="width: 100rpx; height: 100rpx; " src="../../static/images/loading.gif"></image>
+    </view>
+
+  </scroll-view>
+</view>

@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/about/about",
+    "pages/movie/movieDetail/moviedetail"
+  ],
+  "tabBar": {
+    "selectedColor": "#ffffff",
+    "color": "#999999",
+    "backgroundColor": "#222222",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/imgs/home.png",
+        "selectedIconPath": "static/imgs/home.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "static/imgs/movie.png",
+        "selectedIconPath": "static/imgs/movie.png"
+        
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath":"static/imgs/aboutme.png",
+        "selectedIconPath": "static/imgs/aboutme.png"
+      }
+    ]
+  },
+  "window":{
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"green",
+    "navigationBarBackgroundColor": "#222",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"dark"
+  }
+}

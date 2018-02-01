@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="loading" wx:if="{{isLoading}}">
+    <image style="width: 100px; height: 100px; " src="../../../static/images/loading.gif"></image>
+  </view>
+
+  <scroll-view scroll-y='true'  wx:else class='list'>
+
+    <!-- 简单介绍  -->
+    <view class='synopsis'>
+      <view class='synopsis_txt'>
+        <!-- 中文名  -->
+        <text>{{message.title}}</text>
+        <!--英文名  -->
+        <text class='english_name'>{{message.original_title}}</text>
+        <view class='some'>
+          <!-- 电影类型  -->
+          <text class='cate' wx:for="{{message.genres}}">{{item}} </text>
+          <!-- 地址/时长  -->
+          <text class='country'> {{message.countries[0]}}/{{message.year}}</text>
+          <!-- 总导演  -->
+          <text class='time'>总导演：{{message.directors[0].name}}</text>
+        </view>
+        <view>
+          <text class='rating'>观众评分 <text class='number'>{{message.rating.average}}</text></text>
+          <progress activeColor="orange" percent="{{message.rating.average*10}}" active />
+          <text class='rating_count'>{{message.ratings_count}}人</text>
+        </view>
+      </view>
+      <view class='synopsis_pic'>
+        <image src='{{message.images.medium}}'></image>
+      </view>
+    </view>
+    <!-- 影片介绍  -->
+    <scroll-view class='summary' scroll-y="true">
+     {{message.summary}} 
+    </scroll-view >
+    <!-- 演员介绍  -->
+
+    <view class='casts'>
+      <text>主演</text>
+      <scroll-view scroll-x="true" class='casts_message'>
+        <view wx:for="{{message.casts}}" wx:key="item.id" class='cast_message'>
+          <image src='{{item.avatars.small}}'></image>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    
+    <!-- 评论  -->
+    <view></view>
+
+  </scroll-view>
+</view>

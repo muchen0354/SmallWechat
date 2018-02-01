@@ -1,0 +1,12 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  circular = "true">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item class="swiper1">
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='part2'>
+
+</view>

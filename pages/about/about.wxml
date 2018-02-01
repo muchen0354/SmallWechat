@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+<view class='view'>
+  <image src='../../static/imgs/me.jpg'></image>
+</view>
+<view class='bottom'>
+  <text>这是一个帅哥</text>
+</view>
